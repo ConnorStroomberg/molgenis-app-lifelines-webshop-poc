@@ -2,7 +2,7 @@
     <div class="facet">
         <b-row>
             <b-col>
-                <h4>{{this.categoricalFacet.label}}: <small v-if="this.categoricalFacet.description">
+                <h4 class="text-capitalize">{{this.categoricalFacet.label}} <small v-if="this.categoricalFacet.description">
                     <font-awesome-icon icon="question-circle"/></small>
                 </h4>
             </b-col>
