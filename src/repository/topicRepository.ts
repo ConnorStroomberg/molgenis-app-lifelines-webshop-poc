@@ -19,7 +19,7 @@ const toTopic = (item: any): Topic => {
 
 export default {
   getAll (): Promise<Topic[]> {
-    return api.get('api/v2/lifelines_topics').then((response: any) => {
+    return api.get('api/v2/lifelines_topics?num=1000').then((response: any) => {
       return response.items.map(toTopic)
     })
   }

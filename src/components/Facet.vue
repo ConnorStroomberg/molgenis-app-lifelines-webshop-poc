@@ -1,5 +1,5 @@
 <template>
-    <div class="facet">
+    <div class="facet mb-3">
         <b-row>
             <b-col>
                 <h4 class="text-capitalize">{{this.categoricalFacet.label}} <small v-if="this.categoricalFacet.description">
@@ -81,7 +81,7 @@
   }
 </script>
 <style scoped>
-    .facet{
-        margin-bottom: 1rem
+    h4 {
+        color: #00ACC7;
     }
 </style>
