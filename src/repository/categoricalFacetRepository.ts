@@ -9,8 +9,9 @@ const toCategoricalFacetOption = (item: any): CategoricalFacetOption => {
   }
 }
 
-const toCategoricalFacet = (response: any): CategoricalFacet => {
+const toCategoricalFacet = (response: any, id: string): CategoricalFacet => {
   return {
+    id,
     label: response.meta.label,
     options: response.items.map(toCategoricalFacetOption)
   }
@@ -19,25 +20,25 @@ const toCategoricalFacet = (response: any): CategoricalFacet => {
 export default {
   getAgeGroups (): Promise<CategoricalFacet[]> {
     return api.get('api/v2/lifelines_ageGroups').then((response: any) => {
-      return toCategoricalFacet(response)
+      return toCategoricalFacet(response, 'ageGroup')
     })
   },
 
   getSexGroups (): Promise<CategoricalFacet[]> {
     return api.get('api/v2/lifelines_sexGroups').then((response: any) => {
-      return toCategoricalFacet(response)
+      return toCategoricalFacet(response, 'sexGroup')
     })
   },
 
   getSubCohorts (): Promise<CategoricalFacet[]> {
     return api.get('api/v2/lifelines_subcohorts').then((response: any) => {
-      return toCategoricalFacet(response)
+      return toCategoricalFacet(response, 'subCohorts')
     })
   },
 
   getCollectionPoints (): Promise<CategoricalFacet[]> {
     return api.get('api/v2/lifelines_collections').then((response: any) => {
-      return toCategoricalFacet(response)
+      return toCategoricalFacet(response, 'collectionPoint')
     })
   }
 }

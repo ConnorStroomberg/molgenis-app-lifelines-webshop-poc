@@ -1,5 +1,13 @@
 import { ApplicationState, CategoricalFacet, DataItem, Topic } from '@/types/store'
 
+const toggle = (list: string[], item: string): void => {
+  if (list.includes(item)) {
+    list.splice(list.indexOf(item), 1)
+  } else {
+    list.push(item)
+  }
+}
+
 export default {
   toggleDataItem (state: ApplicationState, id: string) {
     if (state.selectedDataItems.includes(id)) {
@@ -7,6 +15,18 @@ export default {
     } else {
       state.selectedDataItems = [...state.selectedDataItems, id]
     }
+  },
+  toggleAgeGroupOption (state: ApplicationState, toggledOptionId: string) {
+    toggle(state.selectedOptions.ageGroup, toggledOptionId)
+  },
+  toggleSexGroupOption (state: ApplicationState, toggledOptionId: string) {
+    toggle(state.selectedOptions.sexGroup, toggledOptionId)
+  },
+  toggleSubCohortsOption (state: ApplicationState, toggledOptionId: string) {
+    toggle(state.selectedOptions.subCohorts, toggledOptionId)
+  },
+  toggleCollectionPointOption (state: ApplicationState, toggledOptionId: string) {
+    toggle(state.selectedOptions.collectionPoint, toggledOptionId)
   },
   setDataItems (state: ApplicationState, dataItems: DataItem[]) {
     state.dataItems = dataItems

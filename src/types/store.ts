@@ -6,7 +6,7 @@ export interface CategoricalFacetOption extends Identifiable {
   label: string
 }
 
-export interface CategoricalFacet {
+export interface CategoricalFacet extends Identifiable {
   label: string
   options: CategoricalFacetOption[]
 }

@@ -1,5 +1,5 @@
 <template>
-    <b-button :variant="variant" :active="active" @click="selected=!selected">{{label}}</b-button>
+    <b-button :variant="variant" :active="active" @click="$emit('facetToggled')">{{label}}</b-button>
 </template>
 
 <script>
@@ -16,14 +16,9 @@
         default: false
       }
     },
-    data () {
-      return {
-        selected: this.active
-      }
-    },
     computed: {
       variant () {
-        return this.selected ? 'primary' : 'outline-primary'
+        return this.active ? 'primary' : 'outline-primary'
       }
     }
   }

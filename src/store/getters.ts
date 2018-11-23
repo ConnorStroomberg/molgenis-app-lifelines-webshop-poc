@@ -18,5 +18,9 @@ export default {
       topic: lookup([item.topic], state.topics)[0],
       selected: state.selectedDataItems.includes(item.id),
       enabled: true
-    }))
+    })),
+  selectedAgeGroups: (state: ApplicationState): string[] => state.selectedOptions.ageGroup,
+  selectedSexGroups: (state: ApplicationState): string[] => state.selectedOptions.sexGroup,
+  selectedCollectionPoints: (state: ApplicationState): string[] => state.selectedOptions.collectionPoint,
+  selectedSubCohorts: (state: ApplicationState): string[] => state.selectedOptions.subCohorts
 }
