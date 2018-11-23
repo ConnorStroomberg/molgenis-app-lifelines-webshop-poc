@@ -1,6 +1,5 @@
-import ApplicationState from '@/types/store/applicationState'
-import VueDataItem from '@/types/vue/vueDataItem'
-import Identifiable from '@/types/store/identifiable'
+import { ApplicationState, Identifiable } from '@/types/store'
+import { VueDataItem } from '@/types/vue'
 
 type TermGuard<T> = (x: T | undefined) => x is T
 

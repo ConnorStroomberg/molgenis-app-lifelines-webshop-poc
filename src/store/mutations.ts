@@ -1,7 +1,4 @@
-import ApplicationState from '@/types/store/applicationState'
-import DataItem from '@/types/store/dataItem'
-import Topic from '@/types/store/topic'
-import CategoricalFacet from '@/types/store/categoricalFacet'
+import { ApplicationState, CategoricalFacet, DataItem, Topic } from '@/types/store'
 
 export default {
   toggleDataItem (state: ApplicationState, id: string) {

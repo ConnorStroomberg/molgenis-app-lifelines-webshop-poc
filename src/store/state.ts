@@ -1,4 +1,4 @@
-import ApplicationState from '@/types/store/applicationState'
+import ApplicationState from '@/types/store'
 
 const state: ApplicationState = {
   dataItems: [],

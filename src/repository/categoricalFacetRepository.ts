@@ -1,7 +1,6 @@
 // @ts-ignore
 import api from '@molgenis/molgenis-api-client'
-import CategoricalFacetOption from '@/types/store/categoricalFacetOption'
-import CategoricalFacet from '@/types/store/categoricalFacet'
+import { CategoricalFacet, CategoricalFacetOption } from '@/types/store'
 
 const toCategoricalFacetOption = (item: any): CategoricalFacetOption => {
   return {

@@ -12,7 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 import DataItemCard from './DataItemCard.vue'
-import VueDataItem from '../types/vue/vueDataItem'
+import { VueDataItem } from '../types/vue'
 import { mapMutations } from 'vuex'
 
 export default Vue.extend({

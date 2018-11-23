@@ -28,7 +28,7 @@
 <script lang="ts">
   // @ts-ignore
   import Vue from 'vue'
-  import VueDataItem from '../types/vue/vueDataItem'
+  import { VueDataItem } from '../types/vue'
 
   export default Vue.extend({
     props: {

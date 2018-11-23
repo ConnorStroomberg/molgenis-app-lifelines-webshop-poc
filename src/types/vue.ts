@@ -1,7 +1,6 @@
-import CategoricalFacetOption from '@/types/store/categoricalFacetOption'
-import Topic from '@/types/store/topic'
+import { CategoricalFacetOption, Topic } from '@/types/store'
 
-export default interface VueDataItem {
+export interface VueDataItem {
   ageGroups: CategoricalFacetOption[]
   sexGroups: CategoricalFacetOption[]
   subCohorts: CategoricalFacetOption[]

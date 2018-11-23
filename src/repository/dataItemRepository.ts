@@ -1,6 +1,6 @@
 // @ts-ignore
 import api from '@molgenis/molgenis-api-client'
-import DataItem from '@/types/store/dataItem'
+import { DataItem } from '@/types/store'
 
 const refToId = (ref: any): string => ref.id
 
@@ -19,7 +19,6 @@ const toDataItem = (item: any): DataItem => {
 }
 
 export default {
-
   getAll (): Promise<DataItem[]> {
     return api.get('api/v2/lifelines_dataItems').then((response: any) => {
       return response.items.map(toDataItem)

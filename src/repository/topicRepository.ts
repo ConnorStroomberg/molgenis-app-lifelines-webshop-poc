@@ -1,7 +1,6 @@
 // @ts-ignore
 import api from '@molgenis/molgenis-api-client'
-import DataItem from '@/types/store/dataItem'
-import Topic from '@/types/store/topic'
+import { Topic } from '@/types/store'
 
 const refToId = (ref: any): string => ref.id
 
