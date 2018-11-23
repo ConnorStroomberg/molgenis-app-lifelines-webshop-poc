@@ -10,14 +10,14 @@
       <dt class="col-sm-4">Subcohorts</dt>
       <dd class="col-sm-8">
         <b-badge v-for="subCohort in dataItem.subCohorts"
-                 :variant = "dataItem.selected && 'light'"
+                 :variant = "dataItem.selected ? 'light' : 'secondary'"
                  :key="subCohort.id" class="mr-1">{{subCohort.label}}
         </b-badge>
       </dd>
       <dt class="col-sm-4">Collections</dt>
       <dd class="col-sm-8">
         <b-badge v-for="collection in dataItem.collectionPoints"
-                 :variant = "dataItem.selected && 'light'"
+                 :variant = "dataItem.selected ? 'light' : 'secondary'"
                  :key="collection.id" class="mr-1">{{collection.label}}
         </b-badge>
       </dd>

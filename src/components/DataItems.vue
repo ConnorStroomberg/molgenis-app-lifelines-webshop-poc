@@ -4,7 +4,7 @@
                     :dataItem="dataItem"
                     :key="dataItem.id"
                     class="m-1 rounded"
-                    style="width: 45%"
+                    style="width: 30%"
                     @click="toggleDataItem(dataItem.id)"></data-item-card>
   </div>
 </template>
