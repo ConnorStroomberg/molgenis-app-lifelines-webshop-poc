@@ -19,25 +19,25 @@ const toCategoricalFacet = (response: any, id: string): CategoricalFacet => {
 
 export default {
   getAgeGroups (): Promise<CategoricalFacet[]> {
-    return api.get('api/v2/lifelines_ageGroups').then((response: any) => {
+    return api.get('api/v2/lifelines_ageGroups?sort=ordinalPosition:asc').then((response: any) => {
       return toCategoricalFacet(response, 'ageGroup')
     })
   },
 
   getSexGroups (): Promise<CategoricalFacet[]> {
-    return api.get('api/v2/lifelines_sexGroups').then((response: any) => {
+    return api.get('api/v2/lifelines_sexGroups?sort=ordinalPosition:asc').then((response: any) => {
       return toCategoricalFacet(response, 'sexGroup')
     })
   },
 
   getSubCohorts (): Promise<CategoricalFacet[]> {
-    return api.get('api/v2/lifelines_subcohorts').then((response: any) => {
+    return api.get('api/v2/lifelines_subcohorts?sort=ordinalPosition:asc').then((response: any) => {
       return toCategoricalFacet(response, 'subCohorts')
     })
   },
 
   getCollectionPoints (): Promise<CategoricalFacet[]> {
-    return api.get('api/v2/lifelines_collections').then((response: any) => {
+    return api.get('api/v2/lifelines_collections?sort=ordinalPosition:asc').then((response: any) => {
       return toCategoricalFacet(response, 'collectionPoint')
     })
   }
