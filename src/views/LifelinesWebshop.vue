@@ -95,28 +95,14 @@
       msg: String
     },
     methods: {
-      ...mapActions([
-        'getDataItems',
-        'getTopics',
-        'getAgeGroups',
-        'getSexGroups',
-        'getSubCohorts',
-        'getCollectionPoints'
-      ]),
+      ...mapActions(['getDataFromBackend']),
       ...mapMutations(['reset'])
     },
     computed: {
       ...mapGetters(['vueDataItems', 'selectionCount'])
     },
     mounted () {
-      this.getAgeGroups()
-      this.getSexGroups()
-      this.getSubCohorts()
-      this.getCollectionPoints()
-
-      this.getDataItems().then(() => {
-        this.getTopics()
-      })
+      this.getDataFromBackend()
 
     }
   })
