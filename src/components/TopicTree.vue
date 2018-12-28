@@ -1,27 +1,35 @@
 <template>
-    <b-list-group>
-        <b-list-group-item v-for="topic in topicList"
-                           :key="topic.id"
-                           href="#"
-                           :variant="topic.children.length ? 'secondary' : 'default'"
-                           :active="topic.selected"
-                           @click="topicClick(topic)">
+  <div>
+    <b-list-group v-if="topicList.length > 0">
+      <b-list-group-item v-for="topic in topicList"
+                         :key="topic.id"
+                         href="#"
+                         :variant="topic.children.length ? 'secondary' : 'default'"
+                         :active="topic.selected"
+                         @click="topicClick(topic)">
       <span v-if="topic.children.length">
-        <font-awesome-icon class="caret-icon" icon="caret-down" v-if="isOpenTopic(topic)"></font-awesome-icon>
+        <font-awesome-icon class="caret-icon" icon="caret-down"
+                           v-if="isOpenTopic(topic)"></font-awesome-icon>
         <font-awesome-icon class="caret-icon" icon="caret-right" v-else></font-awesome-icon>  {{topic.label}}
-          <b-badge :class="countSelectedTopic(topic) === 0 ? 'float-right head-badge' : 'float-right head-badge-selected'" pill>
+          <b-badge
+              :class="countSelectedTopic(topic) === 0 ? 'float-right head-badge' : 'float-right head-badge-selected'"
+              pill>
             {{countSelectedTopic(topic)}}/{{countItems(topic)}}
           </b-badge>
       </span>
-            <span v-else class="p-1">
+        <span v-else class="p-1">
         {{topic.label}}
-         <b-badge :class="countSelectedTopic(topic) === 0 ? 'float-right deselected-badge' : 'float-right'"
-                  :variant="getCountColorVariant(topic)" pill>
+         <b-badge
+             :class="countSelectedTopic(topic) === 0 ? 'float-right deselected-badge' : 'float-right'"
+             :variant="getCountColorVariant(topic)" pill>
            {{countSelectedTopic(topic)}}/{{countItems(topic)}}
          </b-badge>
       </span>
-        </b-list-group-item>
+      </b-list-group-item>
     </b-list-group>
+    <span v-else>Loading topics...</span>
+  </div>
+
 </template>
 <script>
   import { mapState, mapGetters, mapMutations } from 'vuex'

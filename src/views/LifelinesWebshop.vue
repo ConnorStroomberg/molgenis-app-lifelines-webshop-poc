@@ -86,7 +86,7 @@
   import DataItems from '@/components/DataItems.vue'
   import TopicTree from '@/components/TopicTree.vue'
   import SearchBar from '@/components/SearchBar.vue'
-  import { mapGetters, mapActions, mapMutations } from 'vuex'
+  import { mapGetters, mapMutations } from 'vuex'
 
   export default Vue.extend({
     name: 'LifelinesWebshop',
@@ -95,15 +95,10 @@
       msg: String
     },
     methods: {
-      ...mapActions(['getDataFromBackend']),
       ...mapMutations(['reset'])
     },
     computed: {
       ...mapGetters(['vueDataItems', 'selectionCount'])
-    },
-    mounted () {
-      this.getDataFromBackend()
-
     }
   })
 </script>

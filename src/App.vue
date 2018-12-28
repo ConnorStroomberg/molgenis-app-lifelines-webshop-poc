@@ -23,3 +23,17 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+  import Vue from 'vue'
+  import { mapActions } from 'vuex'
+
+  export default Vue.extend({
+    methods: {
+      ...mapActions(['getDataFromBackend'])
+    },
+    mounted () {
+      this.getDataFromBackend()
+    }
+  })
+</script>
